@@ -1,0 +1,283 @@
+﻿<Window x:Class="SimpleCalculator.CalculatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalculator"
+        mc:Ignorable="d"
+        Background="Aqua"
+        WindowStartupLocation="CenterScreen"
+        Title="CalculatorWindow" 
+        Height="450" 
+        Width="800">
+    <Grid>
+        <Grid
+            Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="Calculate Savings" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center"
+                FontSize="24"
+                Foreground="DarkBlue"
+                FontWeight="Bold"
+                />
+            
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    x:Name="Label_Curr"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Content="Currency"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <StackPanel
+                Grid.Row="0"
+                Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <RadioButton 
+                    x:Name="RadioButton_USD"
+                    Content="USD" 
+                    Margin="10"
+                    
+                    FontSize="16"
+                    Foreground="DarkBlue"
+                    Checked="RadioButton_Currency_Checked"/>
+                <RadioButton 
+                    x:Name="RadioButton_Yen"
+                    Content="Yen"
+                    Margin="10"
+                    FontSize="16"
+                    Foreground="DarkBlue"
+                    Checked="RadioButton_Currency_Checked"/>
+            </StackPanel>
+                <Label
+                    x:Name="Label_BegBal"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Content="Beginning Balance"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <TextBox
+                    x:Name="TextBox_BegBal" 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+                <Label
+                    x:Name="Label_Contrib"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Content="Periodic Contribution"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <TextBox
+                    x:Name="TextBox_Contrib" 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+                <Label
+                    x:Name="Label_Freq"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Content="Contribution Frequency"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <TextBox
+                    x:Name="TextBox_Freq" 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+               
+                <Label
+                    x:Name="Label_Rate"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Content="Interest Rate %"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <TextBox
+                    x:Name="TextBox_Rate" 
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+                <Button 
+                    x:Name="Button_Calculate"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    Content="Calculate" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Background="DarkBlue"
+                    Foreground="Aqua"
+                    Click="Button_Calculate_Click"/>
+                <Label
+                    x:Name="Label_Saved"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Content="Total Saved   "
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                
+                <Label
+                    x:Name="Label_Balance" 
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Content="  Your Balance"
+                    Padding="0,0,10,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="16" 
+                    Foreground="DarkBlue"/>
+                <Label
+                    x:Name="Label_Saved_Amt" 
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Content=""
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+                <Label
+                    x:Name="Label_Balance_Amt" 
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"/>
+                
+
+            </Grid>
+
+            <StackPanel
+                    Grid.Row="3"
+                    Grid.Column="1"
+                Orientation="Vertical">
+                    <ComboBox
+                        x:Name="ComboBox_Freq"
+                        Height="30"
+                        VerticalContentAlignment="Center"
+                        Margin="10,120">
+                    <ComboBoxItem Content="Months"
+                        IsSelected="true"/>
+                    <ComboBoxItem Content="Years"/>
+                    </ComboBox>
+
+                </StackPanel>
+
+
+
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Orientation="Vertical">
+                <Image
+                    x:Name="CurrencyImage"
+                    Width="200"
+                    Height="100"
+                    Source="/images/DollarImage.png"/>
+            </StackPanel>
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="2"
+                Orientation="Vertical">
+                <Button 
+                    x:Name="Button_HelpButton"
+                    Content="Help"
+                    Width="100"
+                    Height="30"
+                    Margin="10"
+                    HorizontalAlignment="Center" 
+                    Background="DarkBlue"
+                    Foreground="Aqua"
+                    Click="Button_HelpButton_Click"/>
+
+                <Button 
+                    x:Name="Button_ExitButton"
+                    Width="100"
+                    Height="30"
+                    Margin="10,200"
+                    Content="Exit" 
+                    HorizontalAlignment="Center" 
+                    Background="DarkBlue"
+                    Foreground="Aqua"
+                    Click="Button_ExitButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

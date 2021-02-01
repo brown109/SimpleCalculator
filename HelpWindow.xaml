@@ -1,0 +1,59 @@
+﻿   
+<Window x:Class="SimpleCalculator.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalculator"
+        mc:Ignorable="d"
+        Title="Help Topics" 
+        Height="300" 
+        Width="600"
+        Background="PowderBlue"
+        Foreground="DarkBlue"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel
+        Margin="20,0,20,0">
+        <Label
+            Content="Instructions"
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="DarkBlue"/>
+        <TextBlock
+            Text="1) Enter Beginning Balance, Contribution, Frequency, and Interest Rate % (Annual)"
+            Margin="5"/>
+        <TextBlock
+            Text="2) The List to the right of Frequency lets you change from months to years"
+            Margin="5"
+            TextWrapping="Wrap"/>
+        
+        <TextBlock
+            Text="3) Click  &quot;Calculate&quot;."
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="NOTE 1: The Radio Button only changes the image right now"
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="NOTE 2: The Calculator shows how much you contributed and how much you'd have"
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="SPECIAL NOTE: Compounding is a beautiful thing"
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <Button
+            x:Name="Button_ExitButton"
+            Content="Exit"
+            Width="75" 
+            Height="30"
+            Margin="10"
+            Background="DarkBlue"
+            Foreground="PowderBlue"
+            Click="Button_ExitButton_Click"/>
+    </StackPanel>
+</Window>
+
